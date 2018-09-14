@@ -17,7 +17,6 @@
             <p class="icon-desc">{{item.desc}}</p>
           </div>
         </swiper-slide>
-        <div class="swiper-pagination"  slot="pagination"></div>
       </swiper>
     </div>
   </div>
@@ -29,8 +28,7 @@ export default{
   data () {
     return {
       swiperOption: {
-        pagination: '.swiper-pagination',
-        loop: true
+        autoplay: false
       },
       iconList: [{
         id: '0001',
@@ -100,7 +98,7 @@ export default{
   @import '~styles/mixins.styl'
   .icons >>> .swiper-container
     height: 0
-    padding-bottom: calc(50% + .24rem)
+    padding-bottom: 50%
   .icons >>> .swiper-pagination-bullet
     width: .12rem;
     height: .12rem;
@@ -111,7 +109,7 @@ export default{
   .icons
     overflow: hidden
     height: 0
-    padding-bottom: calc(50% + .24rem)
+    padding-bottom: 50%
     .icon
       position: relative
       overflow: hidden
