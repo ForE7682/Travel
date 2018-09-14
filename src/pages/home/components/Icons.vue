@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="icons">
-      <swiper>
+      <swiper :options="swiperOption">
         <swiper-slide
           v-for="(page, index) of pages"
           :key="index"
@@ -17,6 +17,7 @@
             <p class="icon-desc">{{item.desc}}</p>
           </div>
         </swiper-slide>
+        <div class="swiper-pagination"  slot="pagination"></div>
       </swiper>
     </div>
   </div>
@@ -27,6 +28,10 @@ export default{
   name: 'HomeIcons',
   data () {
     return {
+      swiperOption: {
+        pagination: '.swiper-pagination',
+        loop: true
+      },
       iconList: [{
         id: '0001',
         desc: '景点门票',
@@ -95,11 +100,18 @@ export default{
   @import '~styles/mixins.styl'
   .icons >>> .swiper-container
     height: 0
-    padding-bottom: 50%
+    padding-bottom: calc(50% + .24rem)
+  .icons >>> .swiper-pagination-bullet
+    width: .12rem;
+    height: .12rem;
+    margin: 0 4px;
+  .icons >>> .swiper-pagination
+    bottom: .12rem;
+    line-height: .12rem;
   .icons
     overflow: hidden
     height: 0
-    padding-bottom: 50%
+    padding-bottom: calc(50% + .24rem)
     .icon
       position: relative
       overflow: hidden
@@ -112,9 +124,9 @@ export default{
         top: 0
         right: 0
         left: 0
-        bottom: .44rem
+        bottom: .5rem
         box-sizing: border-box
-        padding-top: .2rem
+        padding-top: .1rem
         .icon-img-content
           display: block
           margin: 0 auto
@@ -124,9 +136,10 @@ export default{
       right: 0
       left: 0
       bottom: 0
-      height: .44rem
-      line-height: .44rem
+      line-height: .4rem
       text-align: center
       color: $darkTextColor
+      box-sizing: border-box;
+      padding-bottom: .1rem;
       ellipsis()
 </style>
