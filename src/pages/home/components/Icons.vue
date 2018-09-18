@@ -107,6 +107,7 @@ export default{
     bottom: .12rem;
     line-height: .12rem;
   .icons
+    margin-top: .2rem
     overflow: hidden
     height: 0
     padding-bottom: 50%
