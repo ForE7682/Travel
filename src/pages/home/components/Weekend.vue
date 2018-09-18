@@ -3,7 +3,7 @@
     <div class="recommend-title">周末去哪儿</div>
     <ul>
       <li
-        v-for="item of recommendList"
+        v-for="item of list"
         class="item"
         :key="item.id"
       >
@@ -22,25 +22,8 @@
 <script>
 export default{
   name: 'HomeWeekend',
-  data () {
-    return {
-      recommendList: [{
-        id: '0001',
-        title: '重庆大美古镇',
-        desc: '行走重庆最美古镇，让你瞬间穿越千年',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1505/48/f117e9b3bf582a.jpg_r_640x214_b8145711.jpg'
-      }, {
-        id: '0001',
-        title: '重庆大美古镇',
-        desc: '行走重庆最美古镇，让你瞬间穿越千年',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1505/48/f117e9b3bf582a.jpg_r_640x214_b8145711.jpg'
-      }, {
-        id: '0001',
-        title: '重庆大美古镇',
-        desc: '行走重庆最美古镇，让你瞬间穿越千年',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1505/48/f117e9b3bf582a.jpg_r_640x214_b8145711.jpg'
-      }]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
@@ -48,13 +31,12 @@ export default{
 <style lang="stylus" scoped>
   @import '~styles/mixins.styl'
   .recommend-title
-    margin-top: .2rem
     line-height: .8rem
     background: #f0f0f0
     text-indent: .2rem
   .item-img-wrapper
     height: 0
-    padding-bottom: 36%
+    padding-bottom: 38.01%
     overflow: hidden
     .item-img
       width: 100%

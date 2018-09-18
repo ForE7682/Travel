@@ -25,62 +25,20 @@
 <script>
 export default{
   name: 'HomeIcons',
+  props: {
+    list: Array
+  },
   data () {
     return {
       swiperOption: {
         autoplay: false
-      },
-      iconList: [{
-        id: '0001',
-        desc: '景点门票',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png'
-      },
-      {
-        id: '0002',
-        desc: '景区直通车',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/95/8d02011d149bdb02.png'
-      },
-      {
-        id: '0003',
-        desc: '重庆必游',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png'
-      },
-      {
-        id: '0004',
-        desc: '夏日玩水',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/6a/45f595250c73d102.png'
-      },
-      {
-        id: '0005',
-        desc: '一日游',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png'
-      },
-      {
-        id: '0006',
-        desc: '两江夜游',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/89/55083b0f1951f302.png'
-      },
-      {
-        id: '0007',
-        desc: '神秘武隆',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/96/c70f1e85ae4a4f02.png'
-      },
-      {
-        id: '0008',
-        desc: '游乐场',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/8246f27355943202.png'
-      },
-      {
-        id: '0009',
-        desc: '全部玩乐',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/80/416c6ab3368d1f02.png'
-      }]
+      }
     }
   },
   computed: {
     pages () {
       const pages = []
-      this.iconList.forEach((item, index) => {
+      this.list.forEach((item, index) => {
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []
@@ -125,7 +83,7 @@ export default{
         left: 0
         bottom: .5rem
         box-sizing: border-box
-        padding-top: .1rem
+        padding: .1rem 0
         .icon-img-content
           display: block
           margin: 0 auto

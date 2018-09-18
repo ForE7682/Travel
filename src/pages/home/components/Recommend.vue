@@ -3,7 +3,7 @@
     <div class="recommend-title">本周热门榜单</div>
     <ul>
       <li
-        v-for="item of recommendList"
+        v-for="item of list"
         class="item border-bottom"
         :key="item.id"
       >
@@ -21,25 +21,8 @@
 <script>
 export default{
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [{
-        id: '0001',
-        title: '武隆天坑地缝国家地质公园',
-        desc: '5A级景区，喀斯特地貌，世界自然遗产',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1505/be/be4802e10f3b3107.water.jpg_200x200_0e98aabe.jpg'
-      }, {
-        id: '0002',
-        title: '武隆天坑地缝国家地质公园',
-        desc: '5A级景区，喀斯特地貌，世界自然遗产',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1505/be/be4802e10f3b3107.water.jpg_200x200_0e98aabe.jpg'
-      }, {
-        id: '0003',
-        title: '武隆天坑地缝国家地质公园',
-        desc: '5A级景区，喀斯特地貌，世界自然遗产',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1505/be/be4802e10f3b3107.water.jpg_200x200_0e98aabe.jpg'
-      }]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
